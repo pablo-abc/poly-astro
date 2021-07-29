@@ -1,11 +1,11 @@
-;;; poly-astro.el --- a polymode for astro files
+;;; poly-astro.el --- A polymode for astro files
 
 ;; Copyright (C) 2021  Pablo Berganza
 
 ;; Author: Pablo Berganza <pablo@berganza.dev>
 ;; Version: 0.0.1
 ;; Package-Requires: ((polymode "0.2.2") (web-mode "17.0.4"))
-;; Keywords: astro poly polymode
+;; Keywords: languages
 ;; URL: https://github.com/pablo-abc/.emacs.d/tree/master/lisp/poly-astro
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
