@@ -8,6 +8,12 @@ It requires for you to have [web-mode](https://web-mode.org) and [polymode](http
 
 This works ok-ish for most of my use-cases. There's a small issue on which syntax highlighting does not show up until you start editing a specific section, but the mode switching and indentation seems to work without any issues.
 
-## Disclaimer
+## Usage
 
-This is very rough and simple and I'm only using this since I don't have the elisp knowledge to make a proper `astro-mode`.
+Require the package and load it for astro files:
+
+```elisp
+(add-to-list 'auto-mode-alist '("\\.astro\\'" . poly-astro))
+```
+
+Any `.astro` file you open now should be properly highlighted and use the correct modes per section.
