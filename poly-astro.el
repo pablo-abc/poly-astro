@@ -1,10 +1,10 @@
-;;; poly-astro.el --- A polymode for astro files
+;;; poly-astro.el --- A polymode for astro files -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2021  Pablo Berganza
 
 ;; Author: Pablo Berganza <pablo@berganza.dev>
 ;; Version: 0.0.1
-;; Package-Requires: ((polymode "0.2.2") (web-mode "17.0.4"))
+;; Package-Requires: ((polymode "0.2.2") (web-mode "17.0.4") (emacs "25"))
 ;; Keywords: languages
 ;; URL: https://github.com/pablo-abc/.emacs.d/tree/master/lisp/poly-astro
 
@@ -38,13 +38,15 @@
 (require 'polymode)
 (require 'web-mode)
 
-(define-hostmode poly-astro-hostmode :mode 'web-mode)
+(define-hostmode poly-astro-hostmode :mode 'html-mode)
+
 (define-innermode poly-astro-fm-innermode
   :mode 'js-mode
   :head-matcher "\\`[ \t\n]*---\n"
   :tail-matcher "^---\n"
   :head-mode 'fundamental-mode
   :tail-mode 'fundamental-mode)
+
 (define-auto-innermode poly-astro-style-tag-lang-innermode
   :head-matcher "<[[:space:]]*style[[:space:]]*lang=[[:space:]]*[\"'][[:space:]]*[[:alpha:]]+[[:space:]]*[\"'][[:space:]]*>\n"
   :tail-matcher "</[[:space:]]*style[[:space:]]*[[:space:]]*>"
@@ -52,6 +54,7 @@
   :head-mode 'host
   :tail-mode 'host
   :body-indent-offset 2)
+
 (define-innermode poly-astro-style-innermode
   :mode 'css-mode
   :head-matcher "<[[:space:]]*style[[:space:]]*[[:space:]]*>\n"
@@ -59,6 +62,7 @@
   :head-mode 'host
   :tail-mode 'host
   :body-indent-offset 2)
+
 (define-polymode poly-astro
   :hostmode 'poly-astro-hostmode
   :innermodes '(poly-astro-fm-innermode
